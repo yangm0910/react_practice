@@ -1,5 +1,4 @@
 import { REMOVE_ITEM, ADD_TODO_ITEM, HANDLE_INPUT } from './ActionTypes';
-import moment from 'moment';
 const defalutState = {
     inputValue: '',
     todoList: []
@@ -7,8 +6,8 @@ const defalutState = {
 
 //reducer绝不可以直接更改接收的state
 export default (state = defalutState, action) => {
-    console.log(moment(new Date()).valueOf())
-    console.log(moment(moment(new Date()).valueOf()).format('YYYY-MM-DD'));
+    // console.log(moment(new Date()).valueOf())
+    // console.log(moment(moment(new Date()).valueOf()).format('YYYY-MM-DD'));
     if(action.type === HANDLE_INPUT){
         const newState = JSON.parse(JSON.stringify(state));
         newState.inputValue = action.inputValue;
