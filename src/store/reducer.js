@@ -1,4 +1,4 @@
-import { REMOVE_ITEM, ADD_TODO_ITEM, HANDLE_INPUT } from './ActionTypes';
+import { REMOVE_ITEM, ADD_TODO_ITEM, HANDLE_INPUT, INIT_TODOLIST } from './ActionTypes';
 const defalutState = {
     inputValue: '',
     todoList: []
@@ -11,6 +11,11 @@ export default (state = defalutState, action) => {
     if(action.type === HANDLE_INPUT){
         const newState = JSON.parse(JSON.stringify(state));
         newState.inputValue = action.inputValue;
+        return newState;
+    }
+    if(action.type === INIT_TODOLIST){
+        const newState = JSON.parse(JSON.stringify(state));
+        newState.todoList = action.data;
         return newState;
     }
     if(action.type === ADD_TODO_ITEM){

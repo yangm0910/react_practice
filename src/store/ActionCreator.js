@@ -1,4 +1,4 @@
-import { REMOVE_ITEM, ADD_TODO_ITEM, HANDLE_INPUT } from './ActionTypes';
+import { REMOVE_ITEM, ADD_TODO_ITEM, HANDLE_INPUT, INIT_TODOLIST } from './ActionTypes';
 
 export const getRemoveItemAction = (index) => ({
         type: REMOVE_ITEM,
@@ -12,4 +12,9 @@ export const getAddTodoAction = () => ({
 export const getHandleInputAction = (inputValue) => ({
     type: HANDLE_INPUT,
     inputValue
+})
+
+export const getInitList = (data) => ({
+    type: INIT_TODOLIST,
+    data
 })
